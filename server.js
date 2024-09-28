@@ -6,8 +6,14 @@ const cors= require('cors')
 
 
 const app=express()
-app.use(cors())
+app.use(cors({
+    origin: 'https://inotefinal.vercel.app/Login', // Update this with your frontend's deployed URL
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true,
+    allowedHeaders: ['auth-token', 'Content-Type']
+  }));
 app.use(express.json())
+
 
 app.use('/api/auth',require('./routes/auth')
 )
