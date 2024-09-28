@@ -7,7 +7,7 @@ const cors= require('cors')
 
 const app=express()
 app.use(cors({
-    origin: 'https://inotefinal.vercel.app/Login', // Update this with your frontend's deployed URL
+    origin: 'https://inotefinal-25i6.vercel.app/Login', // Update this with your frontend's deployed URL
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true,
     allowedHeaders: ['auth-token', 'Content-Type']
