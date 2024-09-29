@@ -3,16 +3,13 @@ const db=require('./db');
 const PORT=process.env.PORT||3000
 const express=require('express')
 const cors= require('cors')
-
+const corsOptions=require('./config/corsOptions')
 
 const app=express()
 app.use(cors(
-   // origin: 'https://inotefinal-25i6.vercel.app', // Update this with your frontend's deployed URL
-    //methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    //credentials: true,
-    //allowedHeaders: ['auth-token', 'Content-Type']
+   corsOptions
   ));
-  app.options('*', cors()); 
+  app.options('*', cors(corsOptions)); 
 
 app.use(express.json())
 // This will handle preflight requests
